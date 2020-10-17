@@ -3,11 +3,7 @@ package ru.cofeok.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import ru.cofeok.dbservice.dao.CustomerDAO;
+import org.springframework.web.bind.annotation.*;
 import ru.cofeok.dbservice.entity.Customer;
 import ru.cofeok.dbservice.service.CustomerService;
 
@@ -25,7 +21,7 @@ public class CustomerController {
     public String listCustomers(Model theModel) {
 
         // get the customers from dao
-        List<Customer> theCustomers = customerService.getCustomers();
+        List<Customer> theCustomers = customerService.getCustomer();
         // add the customers to the model
         theModel.addAttribute("customers", theCustomers);
 
@@ -49,5 +45,16 @@ public class CustomerController {
         customerService.save(theCustomer);
 
         return "redirect:/customer/list"; // todo why redirect here??
+    }
+
+    @GetMapping("/showFormUpdate")
+    public String showFormUpdate(@RequestParam("customerId") int theId, Model theModel) {
+
+        // get the customer from the service
+        Customer theCustomer = customerService.getCustomer(theId);
+        // set the customer as a model attribute to pre-populate the form
+        theModel.addAttribute("customer", theCustomer);
+        // send over to our form
+        return "customer-form";
     }
 }

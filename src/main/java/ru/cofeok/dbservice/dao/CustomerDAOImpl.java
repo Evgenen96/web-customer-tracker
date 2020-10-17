@@ -37,8 +37,20 @@ public class CustomerDAOImpl implements CustomerDAO {
         // get the current hibernate session
         Session currentSession = sessionFactory.getCurrentSession();
         // save the customer
-        currentSession.save(theCustomer);
+        currentSession.saveOrUpdate(theCustomer);
         // todo do we need some try catch at all??
+
+    }
+
+    @Override
+    public Customer getCustomer(int theId) {
+
+        // get the current hibernate session
+        Session currentSession = sessionFactory.getCurrentSession();
+        // get the customer using the PK
+        Customer theCustomer = currentSession.get(Customer.class, theId);
+
+        return theCustomer;
 
     }
 }
