@@ -17,17 +17,28 @@ public class CustomerDAOImpl implements CustomerDAO {
     private SessionFactory sessionFactory;
 
     @Override
-    @Transactional
     public List<Customer> getCustomers() {
 
         // get the current hibernate session
         Session currentSession = sessionFactory.getCurrentSession();
         // create a query
-        Query<Customer> theQuery = currentSession.createQuery("from Customer", Customer.class);
+        Query<Customer> theQuery =
+                currentSession.createQuery("from Customer order by lastName", Customer.class);
         // execute query and get result list
         List<Customer> customers = theQuery.getResultList();
 
         // return the results
         return customers;
+    }
+
+    @Override
+    public void save(Customer theCustomer) {
+
+        // get the current hibernate session
+        Session currentSession = sessionFactory.getCurrentSession();
+        // save the customer
+        currentSession.save(theCustomer);
+        // todo do we need some try catch at all??
+
     }
 }

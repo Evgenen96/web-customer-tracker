@@ -1,13 +1,12 @@
-package ru.cofeok.dbservice.dao;
+package ru.cofeok.dbservice.service;
 
 import ru.cofeok.dbservice.entity.Customer;
 
 import java.util.List;
 
-public interface CustomerDAO {
+public interface CustomerService {
 
-    public List<Customer> getCustomers();
+    List<Customer> getCustomers();
 
     void save(Customer theCustomer);
 }
-
