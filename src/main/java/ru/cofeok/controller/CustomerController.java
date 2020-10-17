@@ -44,7 +44,7 @@ public class CustomerController {
         // save the customer using the customer service
         customerService.save(theCustomer);
 
-        return "redirect:/customer/list"; // todo why redirect here??
+        return "redirect:/customer/list";
     }
 
     @GetMapping("/showFormUpdate")
@@ -56,5 +56,13 @@ public class CustomerController {
         theModel.addAttribute("customer", theCustomer);
         // send over to our form
         return "customer-form";
+    }
+
+    @GetMapping("/delete")
+    public String showFormDelete(@RequestParam("customerId") int theId) {
+
+        // delete the customer
+        customerService.deleteCustomer(theId);
+        return "redirect:/customer/list";
     }
 }
