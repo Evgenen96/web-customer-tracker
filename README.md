@@ -5,3 +5,4 @@ Keep learning Spring stuff following this [Spring FrameWork Udemy course](https:
 
 Related repos:
 [mvc-demo](https://github.com/Evgenen96/spring-mvc-demo)
+[aop-demo](https://github.com/Evgenen96/aop-project-demo)
