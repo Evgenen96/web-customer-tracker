@@ -1,11 +1,11 @@
-package ru.cofeok.dbservice.dao;
+package ru.cofeok.customertracker.dbservice.dao;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import ru.cofeok.dbservice.entity.Customer;
+import ru.cofeok.customertracker.dbservice.entity.Customer;
 
 import java.util.List;
 

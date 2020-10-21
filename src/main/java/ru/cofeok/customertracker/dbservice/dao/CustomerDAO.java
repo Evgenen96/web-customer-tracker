@@ -1,6 +1,6 @@
-package ru.cofeok.dbservice.dao;
+package ru.cofeok.customertracker.dbservice.dao;
 
-import ru.cofeok.dbservice.entity.Customer;
+import ru.cofeok.customertracker.dbservice.entity.Customer;
 
 import java.util.List;
 

@@ -1,10 +1,10 @@
-package ru.cofeok.dbservice.service;
+package ru.cofeok.customertracker.dbservice.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import ru.cofeok.dbservice.dao.CustomerDAO;
-import ru.cofeok.dbservice.entity.Customer;
+import ru.cofeok.customertracker.dbservice.dao.CustomerDAO;
+import ru.cofeok.customertracker.dbservice.entity.Customer;
 
 import java.util.List;
 

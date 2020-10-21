@@ -1,6 +1,6 @@
-package ru.cofeok.dbservice.service;
+package ru.cofeok.customertracker.dbservice.service;
 
-import ru.cofeok.dbservice.entity.Customer;
+import ru.cofeok.customertracker.dbservice.entity.Customer;
 
 import java.util.List;
 

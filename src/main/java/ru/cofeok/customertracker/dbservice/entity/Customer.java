@@ -1,4 +1,4 @@
-package ru.cofeok.dbservice.entity;
+package ru.cofeok.customertracker.dbservice.entity;
 
 import javax.persistence.*;
 

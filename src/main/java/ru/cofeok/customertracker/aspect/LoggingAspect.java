@@ -1,4 +1,4 @@
-package ru.cofeok.aspect;
+package ru.cofeok.customertracker.aspect;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.AfterReturning;
@@ -17,15 +17,15 @@ public class LoggingAspect {
     private Logger myLogger = Logger.getLogger(getClass().getName());
 
     // setup pointcut declarations
-    @Pointcut("execution(* ru.cofeok.controller.*.*(..))")
+    @Pointcut("execution(* ru.cofeok.customertracker.controller.*.*(..))")
     private void forControllerPackage() {
     }
 
-    @Pointcut("execution(* ru.cofeok.dbservice.dao.*.*(..))")
+    @Pointcut("execution(* ru.cofeok.customertracker.dbservice.dao.*.*(..))")
     private void forDaoPackage() {
     }
 
-    @Pointcut("execution(* ru.cofeok.dbservice.service.*.*(..))")
+    @Pointcut("execution(* ru.cofeok.customertracker.dbservice.service.*.*(..))")
     private void forServicePackage() {
     }
 
@@ -36,7 +36,6 @@ public class LoggingAspect {
     @Before("forAppFlow()")
     public void before(JoinPoint theJoinPoint) {
         String theMethod = theJoinPoint.getSignature().toShortString();
-        System.out.println("lol");
         myLogger.info(" >>>>> In @Before: calling method: " + theMethod);
 
         Object[] args = theJoinPoint.getArgs();
